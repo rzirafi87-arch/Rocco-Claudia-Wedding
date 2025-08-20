@@ -2,124 +2,90 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Rocco & Claudia</title>
+
 <style>
   :root{
     --salvia:#6b7b5a;
     --ombra:rgba(0,0,0,.28);
-    /* Tweak rapidi */
-    --album-top:71%;      /* posizione Album su desktop */
-    --phrase-top:77%;     /* posizione frase su desktop  */
-    --bg-shift-desktop:0; /* spostamento sfondo desktop  */
   }
 
-  html,body{height:100%; margin:0; font-family:Georgia,serif; color:#333}
-
-  /* Sfondo */
   body{
+    margin:0;
+    font-family:Georgia,serif;
+    color:#333;
     background-image:url("Inizio Elegante di Rocco e Claudia.png");
     background-repeat:no-repeat;
     background-attachment:fixed;
     background-size:cover;
-    background-position:center calc(50% + var(--bg-shift-desktop));
-  }
-
-  /* Frase */
-  .phrase{
-    position:absolute;
-    left:50%; transform:translateX(-50%);
-    top:var(--phrase-top);
-    width:min(80%, 980px);
-    font-size:clamp(16px,2.4vw,22px);
-    line-height:1.45;
-    font-style:italic;
+    background-position:center;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end; /* manda contenuti verso il basso */
+    align-items:center;
+    height:100vh;
     text-align:center;
-    color:#444;
-    text-shadow:0 1px 2px rgba(255,255,255,.88);
   }
 
   /* Bottone album */
   .album{
-    position:absolute;
-    left:50%; transform:translateX(-50%);
-    top:var(--album-top);
     display:inline-block;
-    background:#556846; color:#fff; text-decoration:none;
-    padding:14px 22px;
-    border-radius:12px; font-weight:700;
+    background:#556846;
+    color:#fff;
+    text-decoration:none;
+    padding:14px 20px;
+    border-radius:12px;
+    font-weight:700;
     box-shadow:0 8px 18px rgba(0,0,0,.25);
-    transition:.2s transform,.2s background;
-    white-space:nowrap;
+    transition:.2s;
+    margin-bottom:12px;
   }
-  .album:hover{background:#445838; transform:translateX(-50%) translateY(-2px);}
+  .album:hover{background:#445838;}
 
-  /* CTA sinistra (desktop) */
+  /* Frase */
+  .phrase{
+    font-size:clamp(16px,2.5vw,22px);
+    font-style:italic;
+    color:#444;
+    margin-bottom:28px;
+    width:90%;
+  }
+
+  /* Pannello sinistro */
   .cta-left{
-    position:absolute; left:28px; bottom:28px;
-    display:flex; flex-direction:column; gap:12px;
+    position:absolute;
+    left:16px;
+    bottom:16px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
   }
   .cta{
-    display:inline-flex; align-items:center; gap:10px;
-    background:#556846; color:#fff; text-decoration:none;
-    padding:12px 16px; border-radius:12px; font-weight:700;
-    box-shadow:0 8px 18px rgba(0,0,0,.25);
-    transition:.2s transform,.2s background;
-    min-height:44px;
+    background:#556846;
+    color:#fff;
+    text-decoration:none;
+    padding:10px 14px;
+    border-radius:10px;
+    font-weight:700;
+    box-shadow:0 6px 14px rgba(0,0,0,.25);
+    transition:.2s;
   }
-  .cta:hover{background:#445838; transform:translateY(-2px);}
-
-  /* ======== Mobile tuning ======== */
-  @media (max-width: 680px){
-    /* Lo sfondo su mobile non usa 'fixed' per evitare scatti */
-    body{
-      background-attachment:scroll;
-      background-size:cover;
-      /* sposta un pochino l'inquadratura verso l'alto per centrare R & C */
-      background-position:center 18vh;
-    }
-    /* Spazi e dimensioni */
-    :root{
-      --album-top:64vh;
-      --phrase-top:72vh;
-    }
-    .phrase{
-      width:90%;
-      font-size:clamp(16px,4vw,20px);
-      line-height:1.5;
-    }
-    .album{
-      padding:14px 20px;
-      font-size:16px;
-    }
-    /* I bottoni Chiesa/Ristorante scendono al centro in basso */
-    .cta-left{
-      left:50%; transform:translateX(-50%);
-      bottom:16px;
-      align-items:center;
-      gap:10px;
-    }
-  }
-
-  /* Safe-area iPhone (niente tagli con la barra di gesto) */
-  @supports (padding: max(0px)) {
-    .cta-left{ padding-bottom: max(16px, env(safe-area-inset-bottom)); }
-    .album{ margin-bottom: env(safe-area-inset-bottom); }
-  }
+  .cta:hover{background:#445838;}
 </style>
 </head>
 <body>
 
-  <!-- Frase sotto la data -->
-  <p class="phrase">"Ci sono attimi che restano impressi più di mille parole. Aiutaci a custodirli con i tuoi occhi!"</p>
+  <!-- Bottone Album -->
+  <a class="album" href="https://photos.app.goo.gl/Zo1bhxAEnwmW7yi48" target="_blank">📸 Album Foto</a>
 
-  <!-- Album Foto (centrato) -->
-  <a class="album" href="https://photos.app.goo.gl/Zo1bhxAEnwmW7yi48" target="_blank" rel="noopener">📸 Album Foto</a>
+  <!-- Frase -->
+  <p class="phrase">"Ci sono attimi che restano impressi più di mille parole. Aiutaci a custodirli con i tuoi occhi!"</p>
 
   <!-- Link utili -->
   <div class="cta-left">
-    <a class="cta" href="https://maps.app.goo.gl/tT23MCJrEutKfNp1A" target="_blank" rel="noopener">📍 Chiesa</a>
-    <a class="cta" href="https://maps.app.goo.gl/ysow3DaFoUKMxufBA" target="_blank" rel="noopener">🍽️🥂 Ristorante</a>
+    <a class="cta" href="https://maps.app.goo.gl/tT23MCJrEutKfNp1A" target="_blank">📍 Chiesa</a>
+    <a class="cta" href="https://maps.app.goo.gl/ysow3DaFoUKMxufBA" target="_blank">🍽️🥂 Ristorante</a>
   </div>
 
 </body>
