@@ -1,93 +1,94 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rocco & Claudia</title>
-
 <style>
-  :root{
-    --salvia:#6b7b5a;
-    --ombra:rgba(0,0,0,.28);
+  html, body {
+    height: 100%;
+    margin: 0;
   }
 
-  html,body{height:100%; margin:0; font-family:Georgia,serif; color:#333}
-
-  /* Sfondo desktop */
-  body{
-    background-image:url("sfondo-orizzontale.png");
-    background-repeat:no-repeat;
-    background-attachment:fixed;
-    background-size:cover;
-    background-position:center;
+  body {
+    background: url("sfondo-orizzontale.png") no-repeat center center;
+    background-size: cover;
+    font-family: Georgia, serif;
+    color: #333;
   }
 
-  /* Sfondo mobile */
-  @media (max-width: 768px){
-    body{
-      background-image:url("sfondo-verticale.png");
-      background-size:cover;
-      background-position:center;
+  /* Mobile */
+  @media (max-width: 768px) {
+    body {
+      background: url("sfondo-verticale.png") no-repeat center center;
+      background-size: cover;
     }
   }
 
-  /* Frase */
-  .phrase{
-    position:absolute;
-    left:50%; transform:translateX(-50%);
-    bottom:100px;
-    width:80%;
-    font-size:clamp(16px,2.5vw,22px);
-    font-style:italic;
-    text-align:center;
-    color:#444;
+  /* Bottone Album */
+  .album {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 22%;
+    display: inline-block;
+    background: #556846;
+    color: #fff;
+    text-decoration: none;
+    padding: 14px 20px;
+    border-radius: 12px;
+    font-weight: 700;
+    box-shadow: 0 8px 18px rgba(0,0,0,.25);
+    transition: .2s;
+  }
+  .album:hover {
+    background: #445838;
+    transform: translateX(-50%) translateY(-2px);
   }
 
-  /* Bottone album */
-  .album{
-    position:absolute;
-    left:50%; transform:translateX(-50%);
-    bottom:40px;
-    display:inline-block;
-    background:#556846; color:#fff; text-decoration:none;
-    padding:14px 20px;
-    border-radius:12px; font-weight:700;
-    box-shadow:0 8px 18px rgba(0,0,0,.25);
-    transition:.2s;
+  /* Link utili */
+  .cta-left {
+    position: absolute;
+    left: 28px;
+    bottom: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
   }
-  .album:hover{background:#445838; transform:translateX(-50%) translateY(-2px);}
 
-  /* Pannello sinistro (Chiesa e Ricevimento) */
-  .cta-left{
-    position:absolute; left:28px; bottom:28px;
-    display:flex; flex-direction:column; gap:12px;
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #556846;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-weight: 700;
+    box-shadow: 0 8px 18px rgba(0,0,0,.25);
+    transition: .2s;
   }
-  .cta{
-    display:inline-flex; align-items:center; gap:10px;
-    background:#556846; color:#fff; text-decoration:none;
-    padding:12px 16px; border-radius:12px; font-weight:700;
-    box-shadow:0 8px 18px rgba(0,0,0,.25);
-    transition:.2s;
+  .cta:hover {
+    background: #445838;
+    transform: translateY(-2px);
   }
-  .cta:hover{background:#445838; transform:translateY(-2px);}
 </style>
 </head>
 <body>
 
-  <!-- Frase sotto la data -->
-  <p class="phrase">"Ci sono attimi che restano impressi più di mille parole. Aiutaci a custodirli con i tuoi occhi!"</p>
+  <!-- Bottone Album -->
+  <a class="album" href="https://photos.app.goo.gl/Zo1bhxAEnwmW7yi48" target="_blank">📸 Album Foto</a>
 
-  <!-- Album Foto -->
-  <a class="album" href="https://photos.app.goo.gl/Zo1bhxAEnwmW7yi48" target="_blank" rel="noopener">📸 Album Foto</a>
-
-  <!-- Link utili in basso a sinistra -->
+  <!-- Link utili -->
   <div class="cta-left">
-    <a class="cta" href="https://maps.app.goo.gl/tT23MCJrEutKfNp1A" target="_blank" rel="noopener">📍 Chiesa</a>
-    <a class="cta" href="https://maps.app.goo.gl/ysow3DaFoUKMxufBA" target="_blank" rel="noopener">🍽️🥂 Ricevimento</a>
+    <a class="cta" href="https://maps.app.goo.gl/tT23MCJrEutKfNp1A" target="_blank">📍 Chiesa</a>
+    <a class="cta" href="https://maps.app.goo.gl/ysow3DaFoUKMxufBA" target="_blank">🍽️🥂 Ricevimento</a>
   </div>
 
 </body>
 </html>
+
 
 
 </body>
